@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+<form action="{{url_for('predict')}}", method="post">
+	<div class="input-group mb-3">
+		<span class="input-group-text" id="inputGroup-sizing-default">Year</span>
+		<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="Year">
+	</div>
+	<div class="input-group mb-3">
+		<span class="input-group-text" id="inputGroup-sizing-default">Showroom price(Lakhs)?</span>
+		<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="Present_Price">
+	</div>
+	<div class="input-group mb-3">
+		<span class="input-group-text" id="inputGroup-sizing-default">Kilometers Driven?</span>
+		<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="Kms_Driven">
+	</div>
+	<select class="form-select" aria-label="Default select example" name="Owner" required="required">
+	  <option selected >Number of previous owners</option>
+	  <option value="0"> Zero</option>
+	  <option value="1">One</option>
+	  <option value="3">Three</option>
+	</select>
+	<br>
+	<br>
+	<select class="form-select" aria-label="Default select example" name="Fuel_Type_Petrol" required="required">
+	  <option selected>Fuel Type</option>
+	  <option value="Petrol">Petrol</option>
+	  <option value="Diesel">Diesel</option>
+	  <option value="CNG">CNG</option>
+	</select>
+	<br>
+	<br>
+	<select class="form-select" aria-label="Default select example" name="Seller_Type_Individual" required="required">
+	  <option selected>seller Type</option>
+	  <option value="Dealer">Dealer</option>
+	  <option value="Individual">Individual</option>
+	</select>
+	<br>
+	<br>
+	<select class="form-select" aria-label="Default select example" name="Transmission_Manual" required="required">
+	  <option selected>Car Type</option>
+	  <option value="Manual">Manual Car</option>
+	  <option value="Automatic">GT Car</option>
+	</select>
+	<br>
+	<br>
+	<button id="sub" type="submit ">Calculate the Selling Price</button>
+     <br>
+</form>	
+</div>
+
+
+{% endblock %}
